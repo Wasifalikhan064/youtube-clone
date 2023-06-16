@@ -6,7 +6,7 @@ import { categories } from "../utils/constants";
 import { Context } from "../context/contextApi";
 
 const LeftNav = () => {
-    const { selectCategories, setSelectCategories, mobileMenu } =
+    const { selectedCategory, setSelectedCategory, mobileMenu } =
         useContext(Context);
 
     const navigate = useNavigate();
@@ -14,9 +14,9 @@ const LeftNav = () => {
     const clickHandler = (name, type) => {
         switch (type) {
             case "category":
-                return setSelectCategories(name);
+                return setSelectedCategory(name);
             case "home":
-                return setSelectCategories(name);
+                return setSelectedCategory(name);
             case "menu":
                 return false;
             default:
@@ -27,7 +27,7 @@ const LeftNav = () => {
     return (
         <div
             className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
-                mobileMenu ? "translate-x-0" : ""
+                mobileMenu ? "translate-x-0.5" : ""
             }`}
         >
             <div className="flex px-5 flex-col">
@@ -42,7 +42,7 @@ const LeftNav = () => {
                                     navigate("/");
                                 }}
                                 className={`${
-                                    selectCategories === item.name
+                                    selectedCategory === item.name
                                         ? "bg-white/[0.15]"
                                         : ""
                                 }`}
