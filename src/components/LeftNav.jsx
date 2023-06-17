@@ -6,7 +6,7 @@ import { categories } from "../utils/constants";
 import { Context } from "../context/contextApi";
 
 const LeftNav = () => {
-    const { selectCategories, setSelectCategories, mobileMenu } =
+    const { selectCategories,setSelectCategories, mobileMenu } =
         useContext(Context);
 
     const navigate = useNavigate();
