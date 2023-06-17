@@ -6,7 +6,7 @@ import { categories } from "../utils/constants";
 import { Context } from "../context/contextApi";
 
 const LeftNav = () => {
-    const { selectCategories,setSelectCategories, mobileMenu } =
+    const { selectCategories, setSelectCategories, mobileMenu } =
         useContext(Context);
 
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ const LeftNav = () => {
     return (
         <div
             className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
-                mobileMenu ? "translate-x-0.5" : ""
+                mobileMenu ? "translate-x-[0.5px]" : ""
             }`}
         >
             <div className="flex px-5 flex-col">
